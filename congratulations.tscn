@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dpuv52mgpxc5v"]
+
+[ext_resource type="AudioStream" uid="uid://ddekqtq6ooeop" path="res://Children Yay Sound Effect (HD) - Joe The Sound Effect Maker.mp3" id="1_672tc"]
+
+[node name="Congratulations" type="Node2D" unique_id=2119676964]
+
+[node name="Label" type="Label" parent="." unique_id=2004010406]
+offset_left = 60.0
+offset_top = 275.0
+offset_right = 1421.0
+offset_bottom = 416.0
+theme_override_font_sizes/font_size = 96
+text = "congratulaiton yuo are unemployed"
+
+[node name="Label" type="Label" parent="Label" unique_id=804457764]
+layout_mode = 0
+offset_left = 682.0
+offset_top = 253.0
+offset_right = 1070.0
+offset_bottom = 356.0
+theme_override_font_sizes/font_size = 47
+text = "(pro)gramming mad by sr izan
+art by mishi sopa"
+
+[node name="ChildrenYaySoundEffect(hd)JoeTheSoundEffectMaker" type="AudioStreamPlayer" parent="." unique_id=862950305]
+stream = ExtResource("1_672tc")
+autoplay = true

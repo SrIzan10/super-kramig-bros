@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://yi3j0edmfvpn"]
+
+[ext_resource type="Texture2D" uid="uid://bxrth3tu6kyxf" path="res://meow normal scale.png" id="1_glpr6"]
+[ext_resource type="Script" uid="uid://16wwhbhg67i7" path="res://movement.gd" id="1_pjt0s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcg8b"]
+size = Vector2(129, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_it6d3"]
+size = Vector2(100, 75.5)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1385414474]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_pjt0s")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=570983930]
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=781203992]
+scale = Vector2(4, 4)
+texture = ExtResource("1_glpr6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1606628996]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_wcg8b")
+
+[node name="the (s)hitter" type="Area2D" parent="." unique_id=1313585071]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="the (s)hitter" unique_id=665243997]
+position = Vector2(4, 22.25)
+shape = SubResource("RectangleShape2D_it6d3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1707294585]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1682978875]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=1162041731]
+layout_mode = 0
+offset_right = 118.0
+offset_bottom = 19.0
+theme_override_font_sizes/font_size = 100
+text = "meow"
+
+[connection signal="area_entered" from="the (s)hitter" to="." method="_on_the_shitter_area_entered"]
